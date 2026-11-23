@@ -85,7 +85,7 @@ const MENU_CATEGORIES = [
   {
     id: 'bocatas',
     title: 'Bocatas',
-    coverPhoto: 'assets/food/hero-bocata.jpg',
+    coverPhoto: 'assets/food/hero-bocatas-grande.jpg',
     coverLabel: 'Bocadillos en pan crujiente recién hecho',
     items: [
       { name: 'Especial de la Casa', price: '6,00 €', desc: 'Lomo, bacon, queso fundido, tomate y mayonesa.' },
