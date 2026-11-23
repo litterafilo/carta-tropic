@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carta digital de Hamburguesería-Pizzería TЯOPIC en La Alberca, Murcia. Consulta hamburguesas, perritos, bocatas, pizzas, entrantes y bebidas.">
+  <meta name="theme-color" content="#151815">
+  <title>Carta — Hamburguesería-Pizzería TЯOPIC | La Alberca</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Lilita+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#menu-content" class="skip-link">Ir directamente a la carta</a>
+
+  <!-- Cabecera compacta con identidad TЯOPIC -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <div class="header-brand">
+        <h1 class="sr-only">Hamburguesería-Pizzería TЯOPIC, La Alberca</h1>
+        <img
+          src="assets/logo-tropic.png"
+          alt="TЯOPIC"
+          class="brand-logo"
+          width="1976"
+          height="391"
+        >
+        <p class="brand-meta">Hamburguesería-Pizzería en La Alberca</p>
+      </div>
+
+      <div class="header-quick">
+        <span class="closed-badge">Martes cerrado</span>
+        <a href="#info-local" class="hours-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>Horario</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Buscador y navegación fija por categorías -->
+  <div class="sticky-bar">
+    <div class="sticky-inner">
+      <div class="search-wrap">
+        <label for="menu-search" class="sr-only">Buscar en la carta</label>
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input
+          type="search"
+          id="menu-search"
+          class="search-input"
+          placeholder="Buscar plato, ingrediente o bebida..."
+          autocomplete="off"
+        >
+        <button type="button" id="clear-search" class="clear-btn" aria-label="Limpiar búsqueda" hidden>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="cat-nav" aria-label="Categorías de la carta">
+        <ul class="cat-list" id="category-nav-list"></ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Carta digital -->
+  <main id="menu-content" class="menu-main">
+    <div id="search-status" class="search-status" aria-live="polite" hidden></div>
+    <div id="menu-sections" class="menu-sections"></div>
+
+    <div id="empty-state" class="empty-state" hidden>
+      <h2>No hemos encontrado ese plato</h2>
+      <p>Prueba con «queso», «bravas», «calamares», «barbacoa» o «cerveza».</p>
+      <button type="button" id="reset-search-btn" class="reset-btn">Ver toda la carta</button>
+    </div>
+  </main>
+
+  <!-- Información del establecimiento (después de la carta) -->
+  <section id="info-local" class="local-section" aria-labelledby="info-heading">
+    <div class="local-inner">
+      <div class="local-heading-bar">
+        <h2 id="info-heading" class="local-title">Nuestro local en La Alberca</h2>
+      </div>
+
+      <div class="local-photos">
+        <figure class="local-photo-card">
+          <img src="assets/cartas-tropic.jpg" alt="Cartas físicas de Tropic sobre las mesas del local" loading="lazy">
+          <figcaption>Las cartas de siempre, ahora también en tu móvil</figcaption>
+        </figure>
+        <figure class="local-photo-card">
+          <img src="assets/local-tropic.jpg" alt="Salón interior de Hamburguesería Tropic con paredes verde bosque" loading="lazy">
+          <figcaption>Salón interior de ambiente cercano y familiar</figcaption>
+        </figure>
+      </div>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <h3 class="info-card-title">Horario habitual</h3>
+          <dl class="hours-list">
+            <div class="hours-row">
+              <dt>Lunes, miércoles, jueves y viernes</dt>
+              <dd>9:00–12:30 (desayunos y almuerzos)<br>20:00–23:30 (cenas)</dd>
+            </div>
+            <div class="hours-row">
+              <dt>Sábados y domingos</dt>
+              <dd>20:00–23:30</dd>
+            </div>
+            <div class="hours-row hours-row--closed">
+              <dt>Martes</dt>
+              <dd>Cerrado</dd>
+            </div>
+          </dl>
+          <p class="info-note">El horario puede variar en festivos o por cierre vacacional, habitualmente en agosto.</p>
+        </article>
+
+        <article class="info-card">
+          <h3 class="info-card-title">Servicios del local</h3>
+          <p class="services-desc">Local clásico y familiar en La Alberca. También preparamos pedidos para llevar.</p>
+          <ul class="services-tags">
+            <li>Terraza</li>
+            <li>Consumo en local</li>
+            <li>Para llevar</li>
+            <li>Desayunos y almuerzos</li>
+            <li>Cenas</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <img src="assets/logo-tropic.png" alt="TЯOPIC" class="footer-logo" width="1976" height="391">
+    <p class="footer-brand">Hamburguesería-Pizzería, La Alberca</p>
+    <p class="footer-sub">Precios en euros (€). Consulta al personal cualquier duda sobre alérgenos.</p>
+  </footer>
+
+  <!-- Modal para ampliar fotografías -->
+  <div id="photo-modal" class="photo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="photo-modal-backdrop" id="modal-backdrop"></div>
+    <div class="photo-modal-box">
+      <button type="button" id="modal-close" class="modal-close-btn" aria-label="Cerrar foto">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18"/>
+          <path d="m6 6 12 12"/>
+        </svg>
+      </button>
+      <img id="modal-img" src="" alt="">
+      <div class="modal-caption">
+        <h3 id="modal-title"></h3>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" id="back-to-top" class="back-to-top" aria-label="Volver arriba" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="menu-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
