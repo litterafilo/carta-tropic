@@ -13,6 +13,11 @@ const MENU_CATEGORIES = [
       { name: 'Cálida', price: '5,70 €', desc: 'Queso, jamón york, huevo frito, tomate, cebolla y lechuga.' },
       { name: 'Tejana', price: '8,00 €', desc: 'Hamburguesa de ternera, bacon, queso, tomate, lechuga y cebolla.' },
       { name: 'Crispy', price: '5,50 €', desc: 'Hamburguesa crujiente de pollo, queso, tomate, cebolla y lechuga.' }
+    ],
+    extras: [
+      { name: 'Extra de huevo', price: '1,00 €' },
+      { name: 'Ingrediente Extra', price: '0,50 €' },
+      { name: 'Cambio de carne de pollo por ternera', price: '3,00 €' }
     ]
   },
   {
@@ -82,7 +87,10 @@ const MENU_CATEGORIES = [
       { name: 'Variante', price: '1,80 €', desc: 'Ensaladilla rusa y anchoas.' },
       { name: 'Madrileña', price: '1,80 €', desc: 'Jamón serrano, tomate y salsa picante.' },
       { name: 'Combi', price: '1,80 €', desc: 'Sobrasada, roquefort y tomate.' },
-      { name: 'Mercenario', price: '1,80 €' }
+      { name: 'Mercenario', price: '1,80 €', desc: 'Jamón york y salsa brava (todo frito).' },
+      { name: 'Noruego', price: '2,20 €', desc: 'Queso de untar y salmón.' },
+      { name: 'Escocés', price: '2,20 €', desc: 'Salmón ahumado, tomate y tápenas.' },
+      { name: 'Hípico', price: '1,80 €', desc: 'Tomate y filete de caballa.' }
     ]
   },
   {
@@ -90,12 +98,18 @@ const MENU_CATEGORIES = [
     title: 'Tostas y montaditos',
     items: [
       { name: 'Catalana', price: '5,00 €', desc: 'Jamón serrano, aceite y tomate.' },
-      { name: 'Catalana + Queso', price: '6,00 €', desc: 'Fresco / Fundido.' },
-      { name: 'Catalana + Queso', price: '6,20 €', desc: 'Curado.' },
+      { name: 'Catalana + Queso (Fresco / Fundido)', price: '6,00 €' },
+      { name: 'Catalana + Queso Curado', price: '6,20 €' },
       { name: 'Rojilla', price: '6,00 €', desc: 'Jamón serrano, aceite, tomate y sobrasada.' },
-      { name: 'Rojilla + Queso', price: '7,00 €', desc: 'Fresco o Fundido.' },
+      { name: 'Rojilla + Queso (Fresco o Fundido)', price: '7,00 €' },
       { name: 'Montadito Lomo', price: '2,00 €' },
-      { name: 'Montadito Lomo Roquefort', price: '2,50 €' }
+      { name: 'Montadito Lomo Roquefort', price: '2,50 €' },
+      { name: 'Montadito Lomo Queso Fresco o Fundido', price: '2,50 €' },
+      { name: 'Bocadito Queso Fresco y Tomate', price: '2,00 €' },
+      { name: 'Bocadito Queso Fresco y Sobrasada', price: '2,50 €' },
+      { name: 'Bocadito Queso Fresco, Anchoa y Piquillo', price: '2,80 €' },
+      { name: 'Montadito Pechuga', price: '2,00 €' },
+      { name: 'Montadito Pechuga Queso Fundido o Fresco', price: '2,60 €' }
     ]
   },
   {
@@ -111,7 +125,16 @@ const MENU_CATEGORIES = [
       { name: 'Clásico', price: '5,00 €', desc: 'Bacon y queso.', tag: 'Clásico' },
       { name: 'Marino', price: '5,50 €', desc: 'Atún, tomate, lechuga y mayonesa.' },
       { name: 'Pica-pica', price: '5,20 €', desc: 'Magreta de cerdo, chorizo picante, tabasco y tomate.' },
-      { name: 'Dinosaurio', price: '5,00 €', desc: 'Magreta de cerdo, sobrasada, jamón york, cebolla, pepinillo, tomate, lechuga y salsa picante.' }
+      { name: 'Dinosaurio', price: '5,00 €', desc: 'Magreta de cerdo, sobrasada, jamón york, cebolla, pepinillo, tomate, lechuga y salsa picante.' },
+      { name: 'Tara', price: '6,00 €', desc: 'Bacon, lomo adobado, tomate y salsa picante.' },
+      { name: 'Jabugeño', price: '6,30 €', desc: 'Jamón serrano, tocino, chorizo, tomate y aceite.' },
+      { name: 'Cantábrico', price: '5,90 €', desc: 'Filete de caballa, queso fresco y pimiento de piquillo.' },
+      { name: 'Huertano', price: '6,00 €', desc: 'Lomo plancha, queso fundido y pimiento verde frito.' },
+      { name: 'Fragata', price: '5,20 €', desc: 'Atún, anchoa, tomate y pepinillo.' },
+      { name: 'Vaquero', price: '5,00 €', desc: 'Sobrasada, queso fresco y anchoa.' },
+      { name: 'Serranito', price: '6,50 €', desc: 'Lomo plancha, pimiento verde frito y jamón serrano.' },
+      { name: 'Tapioca', price: '6,00 €', desc: 'Pechuga pollo plancha, lechuga, tomate y cebolla (salsa yogurt).' },
+      { name: 'Empanado', price: '7,00 €', desc: 'Pechuga empanada, queso curado, salsa picante, mahonesa, lechuga y tomate.' }
     ]
   },
   {
@@ -139,7 +162,24 @@ const MENU_CATEGORIES = [
       { name: 'Bacon', price: '8,50 €', desc: 'Base, tomate, bacon, mozzarella y orégano.' },
       { name: 'York - Bacon', price: '9,50 €', desc: 'Base, tomate, york, bacon, mozzarella y orégano.' },
       { name: 'Atún', price: '9,80 €', desc: 'Base, tomate, atún, cebolla, mozzarella y orégano.' },
-      { name: 'Atún - Bacon', price: '10,40 €', desc: 'Base, tomate, cebolla, atún, bacon, mozzarella y orégano.' }
+      { name: 'Atún - Bacon', price: '10,40 €', desc: 'Base, tomate, cebolla, atún, bacon, mozzarella y orégano.' },
+      { name: 'Carbonara', price: '10,50 €', desc: 'Base, nata, bacon, champiñón y cebolla.' },
+      { name: 'Atún - Piquillo', price: '10,60 €', desc: 'Base, tomate, atún, cebolla, tápenas y pimiento de piquillo.' },
+      { name: 'Vegetal', price: '9,80 €', desc: 'Base, tomate, verduras, mozzarella y orégano.' },
+      { name: 'Pescata', price: '10,80 €', desc: 'Base, tomate, verduras, atún, mozzarella y orégano.' },
+      { name: 'Kebab', price: '10,60 €', desc: 'Base, tomate, carne kebab mixta, salsa kebab y mozzarella.' },
+      { name: 'Speed', price: '11,00 €', desc: 'Base, salsa brava, carne picada, huevo frito, mozzarella y orégano.' },
+      { name: 'Vivaldi', price: '11,00 €', desc: 'Base, tomate, york, espárragos, champiñón, huevo duro, alcachofas, mozzarella y orégano.' },
+      { name: 'Salatta', price: '9,00 €', desc: 'Base, tomate, anchoas, olivas, mozzarella y orégano.' },
+      { name: 'Mangui', price: '9,00 €', desc: 'Base, tomate, chorizo ibérico, mozzarella y orégano.' },
+      { name: 'Cinco quesos', price: '11,20 €', desc: 'Base, tomate, surtido de quesos, roquefort, mozzarella y orégano.' },
+      { name: 'Caribe', price: '10,30 €', desc: 'Base, tomate, york, piña, maíz, mozzarella y orégano.' },
+      { name: 'Barbacoa', price: '11,20 €', desc: 'Base, salsa barbacoa, bacon, carne picada y mozzarella.' },
+      { name: 'Filandesa', price: '12,00 €', desc: 'Base, tomate, salmón ahumado, anchoas, tápenas, mozzarella y orégano.' },
+      { name: 'Cabresa', price: '10,00 €', desc: 'Base, tomate natural, queso de cabra, mozzarella, cebolla y orégano.' }
+    ],
+    extras: [
+      { name: 'Pizza al gusto (ingrediente opcional)', price: '0,80 €', desc: 'Excepto atún, carne picada, salmón y gambas según cantidad.' }
     ]
   },
   {
@@ -172,7 +212,7 @@ const MENU_CATEGORIES = [
     id: 'bebidas',
     title: 'Bebidas',
     coverPhoto: 'assets/food/hero-cerveza.jpg',
-    coverLabel: 'Cerveza fría, sangría y refrescos',
+    coverLabel: 'Cerveza fría, sangría, vinos y refrescos',
     items: [
       { name: 'Vaso de cerveza', price: '2,30 €' },
       { name: 'Tercio', price: '2,60 €' },
@@ -184,7 +224,20 @@ const MENU_CATEGORIES = [
       { name: 'Tanque sangría 500 cl', price: '3,80 €' },
       { name: 'Botellín Tinto de verano', price: '2,60 €' },
       { name: 'Coca Cola (Lata)', price: '2,50 €' },
-      { name: 'Fanta (Lata)', price: '2,50 €' }
+      { name: 'Fanta (Lata)', price: '2,50 €' },
+      { name: 'Aquarius (Lata)', price: '2,60 €' },
+      { name: 'Nestea (Lata)', price: '2,60 €' },
+      { name: 'Tónica', price: '2,50 €' },
+      { name: 'Zumo', price: '2,00 €' },
+      { name: 'Casera 1/2 litro', price: '2,80 €' },
+      { name: 'Botella de agua 1,5 l.', price: '2,00 €' },
+      { name: 'Vino tinto de la casa (1/2 litro)', price: '4,00 €' },
+      { name: 'Vino tinto Ribera de Duero (Botella)', price: '10,00 €' },
+      { name: 'Vino tinto Ribera de Duero (Copa)', price: '2,50 €' },
+      { name: 'Vino rosado (Botella)', price: '9,50 €' },
+      { name: 'Vino rosado (Copa)', price: '2,50 €' },
+      { name: 'Vino rosado Peñascal', price: '9,00 €' },
+      { name: 'Lambrusco dell Emilia', price: '7,00 €' }
     ]
   },
   {
