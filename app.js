@@ -45,6 +45,9 @@ function createMenuRow(item) {
   const li = document.createElement('li');
   li.className = 'menu-row';
 
+  const top = document.createElement('div');
+  top.className = 'row-top';
+
   const left = document.createElement('div');
   left.className = 'row-left';
 
@@ -68,9 +71,18 @@ function createMenuRow(item) {
   price.className = 'row-price';
   price.textContent = item.price;
 
-  li.appendChild(left);
-  li.appendChild(dots);
-  li.appendChild(price);
+  top.appendChild(left);
+  top.appendChild(dots);
+  top.appendChild(price);
+  li.appendChild(top);
+
+  if (item.desc) {
+    const desc = document.createElement('p');
+    desc.className = 'row-desc';
+    desc.textContent = item.desc;
+    li.appendChild(desc);
+  }
+
   return li;
 }
 
@@ -97,6 +109,7 @@ function renderMenu(query = '') {
     const matches = (item) =>
       !normQuery ||
       normalizeText(item.name).includes(normQuery) ||
+      (item.desc && normalizeText(item.desc).includes(normQuery)) ||
       normalizeText(cat.title).includes(normQuery);
 
     const filteredItems = cat.items.filter(matches);

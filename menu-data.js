@@ -5,30 +5,25 @@ const MENU_CATEGORIES = [
     coverPhoto: 'assets/food/hero-burger.jpg',
     coverLabel: 'Hamburguesas recién hechas a la plancha',
     items: [
-      { name: 'Normal', price: '3,60 €' },
-      { name: 'Con queso', price: '4,10 €' },
-      { name: 'Tropical', price: '4,10 €' },
-      { name: 'Especial', price: '4,50 €', tag: 'Especial' },
-      { name: 'Americana', price: '4,50 €' },
-      { name: 'Celia', price: '4,70 €' },
-      { name: 'Tejana', price: '4,70 €' },
-      { name: 'Chivito', price: '5,50 €', tag: 'Clásico' }
-    ],
-    extras: [
-      { name: 'Ingrediente extra', price: '0,90 €' },
-      { name: 'Carne extra pollo por ternera', price: '2,50 €' },
-      { name: 'Extra de huevo frito', price: '0,90 €' }
+      { name: 'Normal', price: '4,50 €', desc: 'Tomate, cebolla y lechuga.' },
+      { name: 'Con Queso', price: '5,00 €', desc: 'Tomate, cebolla, lechuga y queso.' },
+      { name: 'Tropical', price: '5,50 €', desc: 'Queso, bacon, tomate, pepinillo, cebolla y lechuga.' },
+      { name: 'Especial', price: '5,50 €', desc: 'Queso, huevo duro, tomate, cebolla, lechuga y mayonesa.', tag: 'Especial' },
+      { name: 'Americana', price: '5,50 €', desc: 'Queso, bacon, pepinillo, maíz, tomate, cebolla y lechuga.' },
+      { name: 'Cálida', price: '5,70 €', desc: 'Queso, jamón york, huevo frito, tomate, cebolla y lechuga.' },
+      { name: 'Tejana', price: '8,00 €', desc: 'Hamburguesa de ternera, bacon, queso, tomate, lechuga y cebolla.' },
+      { name: 'Crispy', price: '5,50 €', desc: 'Hamburguesa crujiente de pollo, queso, tomate, cebolla y lechuga.' }
     ]
   },
   {
     id: 'perritos',
     title: 'Perritos calientes',
     items: [
-      { name: 'Perritos', price: '2,60 €' },
-      { name: 'Perrito con queso fundido', price: '3,50 €' },
-      { name: 'Perrito con bacon', price: '3,50 €' },
-      { name: 'Perrito con bacon y queso fundido', price: '4,10 €' },
-      { name: 'Perrito Guay', price: '4,60 €' }
+      { name: 'Perrito', price: '3,00 €' },
+      { name: 'Perrito Queso Fundido', price: '4,00 €' },
+      { name: 'Perrito Bacon', price: '4,00 €' },
+      { name: 'Perrito Queso Fundido y Bacon', price: '4,60 €' },
+      { name: 'Perrito Guay', price: '5,10 €', desc: 'Salchicha, cebolla plancha, bacon y queso fundido (más picante).' }
     ]
   },
   {
@@ -37,81 +32,70 @@ const MENU_CATEGORIES = [
     coverPhoto: 'assets/food/hero-sandwich.jpg',
     coverLabel: 'Sándwiches tostados al momento',
     items: [
-      { name: 'Mixto', price: '3,20 €' },
-      { name: 'Bikoto', price: '3,40 €' },
-      { name: 'Vegetal', price: '3,40 €' },
-      { name: 'Sabinera', price: '3,40 €' },
-      { name: 'Light', price: '3,40 €' },
-      { name: 'Bikoto especial', price: '4,10 €' },
-      { name: 'Completo', price: '4,60 €' }
+      { name: 'Mixto', price: '3,50 €', desc: 'Jamón york y queso.' },
+      { name: 'Blood', price: '5,00 €', desc: 'Jamón york, queso, sobrasada, tomate y lechuga.' },
+      { name: 'Vegetal', price: '5,20 €', desc: 'Atún, cebolla, tomate, pepinillo, lechuga, espárragos y mayonesa.' },
+      { name: 'Bandera', price: '4,60 €', desc: 'Bacon, tomate y huevo frito.' },
+      { name: 'Light', price: '3,60 €', desc: 'Huevo duro, tomate, lechuga y mayonesa.' },
+      { name: 'Españolito', price: '5,00 €', desc: 'Sobrasada, bacon y queso fundido.' },
+      { name: 'Campero', price: '5,00 €', desc: 'Pechuga de pollo plancha, tomate, lechuga y cebolla.' }
     ]
   },
   {
     id: 'entrantes',
     title: 'Entrantes',
     items: [
-      { name: 'Aceitunas rellenas', price: '2,00 €' },
-      { name: 'Aceitunas aliñadas', price: '1,80 €' },
-      { name: 'Matrimonios', price: '2,50 €' },
-      { name: 'Boquerones en vinagre', price: '2,50 €' },
-      { name: 'Cazuelita de chorizo', price: '2,50 €' },
-      { name: 'Cazuelita de morcilla', price: '2,50 €' },
-      { name: 'Cazuelita de lomo', price: '2,50 €' },
-      { name: 'Cazuelita de callos', price: '2,50 €' },
-      { name: 'Cazuelita de setas', price: '2,50 €' }
+      { name: 'Aceitunas Rellenas', price: '2,50 €' },
+      { name: 'Marinera', price: '2,60 €' },
+      { name: 'Marinero', price: '2,60 €' },
+      { name: 'Casamiento', price: '3,00 €', desc: 'Marinera + Boquerón.' },
+      { name: 'Bicicleta', price: '2,20 €' },
+      { name: 'Ensaladilla Rusa', price: '3,00 €', desc: 'Ración.' },
+      { name: 'Ensaladilla Rusa', price: '5,00 €', desc: '2 Personas.' }
     ]
   },
   {
     id: 'patatas',
-    title: 'Patatas y picoteo',
+    title: 'Patatas',
     coverPhoto: 'assets/food/hero-bravas.jpg',
-    coverLabel: 'Fritas bravas, mixtas, alitas y picoteo',
+    coverLabel: 'Patatas bravas, alitas y picoteo',
     items: [
-      { name: 'Fritas bravas (normales)', price: '2,70 €', tag: 'Muy pedidas' },
-      { name: 'Fritas bravas (pequeñas)', price: '2,40 €' },
-      { name: 'Fritas mixtas (normales)', price: '2,80 €' },
-      { name: 'Fritas mixtas (pequeñas)', price: '2,50 €' },
-      { name: 'Nuggets de pollo (6 unidades)', price: '4,00 €' },
-      { name: 'Aros de cebolla', price: '4,00 €' },
-      { name: 'Alitas barbacoa (6 unidades)', price: '4,00 €' },
-      { name: 'Alitas bravas (6 unidades)', price: '4,00 €' },
-      { name: 'Alitas fritas (6 unidades)', price: '4,00 €' }
+      { name: 'Bravas Grandes', price: '5,20 €', tag: 'Muy pedidas' },
+      { name: 'Bravas Pequeñas', price: '4,00 €' },
+      { name: 'Fritas', price: '3,50 €' },
+      { name: 'Fritas Dobles', price: '4,80 €' },
+      { name: 'Nuggets (6 Udes)', price: '4,80 €' },
+      { name: 'Aros de Cebolla', price: '4,50 €' },
+      { name: 'Alitas Barbacoa (6 Udes)', price: '4,80 €' },
+      { name: 'Alitas Bravas (6 Udes)', price: '4,80 €' }
     ]
   },
   {
     id: 'mini-bocatas',
     title: 'Mini bocatas',
     items: [
-      { name: 'Kalamero', price: '1,70 €' },
-      { name: 'Sofrito', price: '1,70 €' },
-      { name: 'Calamares', price: '1,70 €' },
-      { name: 'Mantequilla', price: '1,70 €' },
-      { name: 'Corral', price: '1,70 €' },
-      { name: 'Noruego', price: '2,10 €' },
-      { name: 'Noruega', price: '2,10 €' },
-      { name: 'Morcilla', price: '1,70 €' },
-      { name: 'Trujas', price: '1,70 €' }
+      { name: 'Ratonero', price: '1,80 €', desc: 'Roquefort, anchoa y tomate.' },
+      { name: 'Colorín Salao', price: '1,80 €', desc: 'Sobrasada, anchoa y tomate.' },
+      { name: 'Mar y Tierra', price: '1,80 €', desc: 'Atún, huevo duro, lechuga y mayonesa.' },
+      { name: 'Calorina', price: '1,80 €', desc: 'Bacon, salsa picante y tomate.' },
+      { name: 'Casablanca', price: '1,80 €', desc: 'Lomo, queso fundido, tomate y salsa picante.' },
+      { name: 'Variante', price: '1,80 €', desc: 'Ensaladilla rusa y anchoas.' },
+      { name: 'Madrileña', price: '1,80 €', desc: 'Jamón serrano, tomate y salsa picante.' },
+      { name: 'Combi', price: '1,80 €', desc: 'Sobrasada, roquefort y tomate.' },
+      { name: 'Mercenario', price: '1,80 €' }
     ]
   },
   {
     id: 'tostas-montaditos',
     title: 'Tostas y montaditos',
     items: [
-      { name: 'Catalana', price: '4,00 €' },
-      { name: 'Catalana queso', price: '4,50 €' },
-      { name: 'Catalana queso curado', price: '4,50 €' },
-      { name: 'Rollito', price: '1,90 €' },
-      { name: 'Hojita ibérico fresco y fundido', price: '2,20 €' },
-      { name: 'Montado de lomo', price: '2,20 €' },
-      { name: 'Montado de lomo roquefort', price: '2,50 €' },
-      { name: 'Montado de lomo queso fresco', price: '2,50 €' },
-      { name: 'Montado de lomo queso fundido', price: '2,50 €' },
-      { name: 'Montado de queso fresco', price: '2,50 €' },
-      { name: 'Bocadillo queso fresco y sobrasada', price: '2,50 €' },
-      { name: 'Bocadillo queso fresco anchoa y piquillo', price: '2,50 €' },
-      { name: 'Montado de pechuga', price: '2,50 €' },
-      { name: 'Montado de pechuga queso fundido', price: '2,50 €' },
-      { name: 'Montado de pechuga queso fresco', price: '2,40 €' }
+      { name: 'Catalana', price: '5,00 €', desc: 'Jamón serrano, aceite y tomate.' },
+      { name: 'Catalana + Queso', price: '6,00 €', desc: 'Fresco / Fundido.' },
+      { name: 'Catalana + Queso', price: '6,20 €', desc: 'Curado.' },
+      { name: 'Rojilla', price: '6,00 €', desc: 'Jamón serrano, aceite, tomate y sobrasada.' },
+      { name: 'Rojilla + Queso', price: '7,00 €', desc: 'Fresco o Fundido.' },
+      { name: 'Montadito Lomo', price: '2,00 €' },
+      { name: 'Montadito Lomo Roquefort', price: '2,50 €' }
     ]
   },
   {
@@ -120,29 +104,26 @@ const MENU_CATEGORIES = [
     coverPhoto: 'assets/food/hero-bocata.jpg',
     coverLabel: 'Bocadillos en pan crujiente recién hecho',
     items: [
-      { name: 'Especial de la casa', price: '5,00 €', tag: 'De la casa' },
-      { name: 'Serrano', price: '4,70 €' },
-      { name: 'Jamón', price: '4,70 €' },
-      { name: 'Pollo', price: '4,70 €' },
-      { name: 'Pechuga', price: '4,70 €' },
-      { name: 'Lomo', price: '4,70 €' },
-      { name: 'Bacon', price: '4,70 €' },
-      { name: 'Chorizo', price: '4,70 €' },
-      { name: 'Morcilla', price: '4,70 €' },
-      { name: 'Calamares', price: '4,70 €' },
-      { name: 'Serranito', price: '4,90 €' },
-      { name: 'Serranito especial', price: '5,00 €' }
+      { name: 'Especial de la Casa', price: '6,00 €', desc: 'Lomo, bacon, queso fundido, tomate y mayonesa.', tag: 'De la casa' },
+      { name: 'Sandra', price: '5,00 €', desc: 'Sobrasada, queso, anchoas, tomate y pepinillos.' },
+      { name: 'Perico', price: '5,70 €', desc: 'Jamón york, queso, huevo duro, anchoas, tomate y pepinillos.' },
+      { name: 'Sabrosón', price: '5,70 €', desc: 'Jamón york, queso, huevo duro, anchoas, lechuga y mayonesa.' },
+      { name: 'Clásico', price: '5,00 €', desc: 'Bacon y queso.', tag: 'Clásico' },
+      { name: 'Marino', price: '5,50 €', desc: 'Atún, tomate, lechuga y mayonesa.' },
+      { name: 'Pica-pica', price: '5,20 €', desc: 'Magreta de cerdo, chorizo picante, tabasco y tomate.' },
+      { name: 'Dinosaurio', price: '5,00 €', desc: 'Magreta de cerdo, sobrasada, jamón york, cebolla, pepinillo, tomate, lechuga y salsa picante.' }
     ]
   },
   {
     id: 'pan-casero',
     title: 'Pan casero',
     items: [
-      { name: 'Serranada', price: '2,60 €' },
-      { name: 'Serranada (queso fundido)', price: '3,00 €' },
-      { name: 'Serranada (queso cabra y miel)', price: '3,60 €' },
-      { name: 'Tosta ali-oli con tomate y piparras', price: '4,00 €' },
-      { name: 'Tosta de salmón con nata rosa y piparras', price: '7,00 €' }
+      { name: 'Sobrasada', price: '3,00 €' },
+      { name: 'Sobrasada Queso Fresco', price: '4,00 €' },
+      { name: 'Sobrasada Queso Fundido', price: '4,00 €' },
+      { name: 'Sobrasada Queso Cabra y miel', price: '5,20 €' },
+      { name: 'Tosta Atún', price: '6,00 €', desc: 'Atún, salsa rosa y tapenas.' },
+      { name: 'Tosta Salmón', price: '8,00 €', desc: 'Salmón, salsa rosa y tapenas.' }
     ]
   },
   {
@@ -151,55 +132,59 @@ const MENU_CATEGORIES = [
     coverPhoto: 'assets/food/hero-pizza.jpg',
     coverLabel: 'Pizzas al horno y pan de ajo',
     items: [
-      { name: 'Pan de ajo', price: '4,00 €' },
-      { name: 'Pan de ajo y queso', price: '5,00 €' },
-      { name: 'Margarita', price: '7,50 €' },
-      { name: 'York', price: '7,50 €' },
-      { name: 'York bacon', price: '8,50 €' },
-      { name: 'York bacon huevo', price: '9,00 €' },
-      { name: 'York bacon huevo cebolla', price: '9,50 €' },
-      { name: 'Atún bacon', price: '9,00 €' },
-      { name: 'Carbonara', price: '9,00 €' },
-      { name: '4 quesos', price: '9,00 €' },
-      { name: 'Vegetal', price: '9,00 €' },
-      { name: 'Peperoni', price: '9,50 €' },
-      { name: 'Peperoni york', price: '9,50 €' },
-      { name: 'Peperoni york bacon', price: '10,00 €' },
-      { name: 'Peperoni york bacon huevo', price: '10,50 €' },
-      { name: 'Barbacoa', price: '10,00 €' },
-      { name: 'Barbacoa york', price: '10,50 €' },
-      { name: 'Barbacoa york bacon', price: '11,00 €' },
-      { name: 'Barbacoa york bacon huevo', price: '11,50 €' },
-      { name: 'Barbacoa york bacon huevo cebolla', price: '12,00 €' },
-      { name: 'Barbacoa york bacon huevo cebolla champiñón', price: '12,50 €' },
-      { name: 'Barbacoa york bacon huevo cebolla champiñón pimiento', price: '13,00 €' },
-      { name: 'Barbacoa york bacon huevo cebolla champiñón pimiento aceitunas', price: '13,50 €' }
+      { name: 'Pan de ajo', price: '7,00 €', desc: 'Base, ajo, aceite y orégano.' },
+      { name: 'Pan de ajo y queso', price: '8,00 €', desc: 'Base, ajo, aceite, mozzarella y orégano.' },
+      { name: 'Margarita', price: '7,20 €', desc: 'Base, tomate, mozzarella y orégano.' },
+      { name: 'York', price: '8,50 €', desc: 'Base, tomate, york, mozzarella y orégano.' },
+      { name: 'Bacon', price: '8,50 €', desc: 'Base, tomate, bacon, mozzarella y orégano.' },
+      { name: 'York - Bacon', price: '9,50 €', desc: 'Base, tomate, york, bacon, mozzarella y orégano.' },
+      { name: 'Atún', price: '9,80 €', desc: 'Base, tomate, atún, cebolla, mozzarella y orégano.' },
+      { name: 'Atún - Bacon', price: '10,40 €', desc: 'Base, tomate, cebolla, atún, bacon, mozzarella y orégano.' }
     ]
   },
   {
     id: 'sartenes',
     title: 'Sartenes y combinados',
     items: [
-      { name: 'Bacon', price: '8,00 €' },
-      { name: 'Chorizo', price: '8,00 €' },
-      { name: 'Jamón', price: '8,00 €' },
-      { name: 'Jamón queso (gratinado)', price: '8,50 €' },
-      { name: 'Bacon queso (gratinado)', price: '8,50 €' }
+      { name: 'Bacon', price: '9,00 €', desc: 'Patatas, bacon, huevos revueltos y salsa ranchera.' },
+      { name: 'Chorizo', price: '9,00 €', desc: 'Patatas, chorizo, huevos revueltos y salsa ranchera.' },
+      { name: 'Jamón Serrano', price: '9,50 €', desc: 'Patatas, jamón serrano, huevos revueltos y salsa ranchera.' },
+      { name: 'Bacon - Queso (grande)', price: '9,00 €', desc: 'Patatas, bacon, queso y salsa ranchera (al horno).' },
+      { name: 'Bacon - Queso (pequeña)', price: '5,00 €', desc: 'Patatas, bacon, queso y salsa ranchera (al horno).' },
+      { name: 'Kebab', price: '9,00 €', desc: 'Patatas, carne kebab mixta, salsa kebab y mozzarella.' }
     ]
   },
   {
     id: 'ensaladas',
     title: 'Ensaladas',
     items: [
-      { name: 'De la casa (2 personas)', price: '6,70 €' },
-      { name: 'Tropical (2 personas)', price: '6,70 €' },
-      { name: 'Mixta (1/2 ración)', price: '3,50 €' },
-      { name: 'Imperial (2 personas)', price: '5,00 €' },
-      { name: 'Rusa (1/2 ración)', price: '3,50 €' }
+      { name: 'De la Casa', price: '7,50 €', desc: 'Lechuga, tomate, maíz, pimiento verde, cebolla, atún, huevo duro y aceitunas. 2 pers.' },
+      { name: 'Tropical', price: '9,50 €', desc: 'Piña, jamón york, queso fresco, tomate, lechuga, zanahoria y salsa rosa. 2 pers.' },
+      { name: 'Imperial', price: '10,00 €', desc: 'Lechuga, tomate, queso curado, pechuga empanada, zanahoria, salsa césar y frutos secos. 2 pers.' },
+      { name: 'Rulera', price: '10,00 €', desc: 'Lechuga, tomate cherry, rulo de cabra, salsa P.X. y mix de frutos secos. 2 pers.' }
     ],
     extras: [
-      { name: 'Tartares de salmón extra', price: '6,10 €' },
-      { name: 'Salsas extra (ketchup, mostaza, mayonesa)', price: '0,50 €' }
+      { name: 'Tarrinas de salsa extra', price: '0,60 €' },
+      { name: 'Sobres extra (ketchup, mostaza, mayonesa)', price: '0,10 €' }
+    ]
+  },
+  {
+    id: 'bebidas',
+    title: 'Bebidas',
+    coverPhoto: 'assets/food/hero-cerveza.jpg',
+    coverLabel: 'Cerveza fría, sangría y refrescos',
+    items: [
+      { name: 'Vaso de cerveza', price: '2,30 €' },
+      { name: 'Tercio', price: '2,60 €' },
+      { name: 'Tercio Especial', price: '2,80 €' },
+      { name: 'Tercio Sin Alcohol', price: '2,60 €' },
+      { name: 'Tanque 500 cl.', price: '3,60 €' },
+      { name: 'Jarra de cerveza', price: '7,20 €' },
+      { name: 'Jarra de sangría', price: '7,50 €' },
+      { name: 'Tanque sangría 500 cl', price: '3,80 €' },
+      { name: 'Botellín Tinto de verano', price: '2,60 €' },
+      { name: 'Coca Cola (Lata)', price: '2,50 €' },
+      { name: 'Fanta (Lata)', price: '2,50 €' }
     ]
   },
   {
@@ -208,35 +193,11 @@ const MENU_CATEGORIES = [
     coverPhoto: 'assets/food/hero-postre.jpg',
     coverLabel: 'Tartas y postres de la casa',
     items: [
-      { name: 'Tarta de whisky', price: '5,00 €' },
-      { name: 'Contesa', price: '3,00 €' },
-      { name: 'Tarta de la abuela', price: '4,00 €' },
-      { name: 'Tarta del abuelo', price: '4,00 €' },
-      { name: 'Tarta de queso', price: '4,00 €' }
-    ]
-  },
-  {
-    id: 'cerveza',
-    title: 'Cerveza y bodega',
-    coverPhoto: 'assets/food/hero-cerveza.jpg',
-    coverLabel: 'Cerveza bien fría, tinto de verano y sangría',
-    items: [
-      { name: 'Vaso de cerveza', price: '2,00 €' },
-      { name: 'Tercio', price: '2,30 €' },
-      { name: 'Tercio cerveza especial', price: '2,60 €' },
-      { name: 'Tercio de 0,0', price: '2,60 €' },
-      { name: 'Jarra de cerveza', price: '3,50 €' },
-      { name: 'Tinto de verano', price: '3,00 €' },
-      { name: 'Jarra de sangría', price: '7,00 €' },
-      { name: 'Botellín tinto de verano', price: '2,00 €' }
-    ]
-  },
-  {
-    id: 'refrescos',
-    title: 'Refrescos',
-    items: [
-      { name: 'Coca Cola (lata)', price: '2,00 €' },
-      { name: 'Fanta (lata)', price: '2,00 €' }
+      { name: 'Tarta de Whisky', price: '6,00 €' },
+      { name: 'Contesa', price: '4,50 €' },
+      { name: 'Tarta de la Abuela', price: '4,00 €' },
+      { name: 'Tarta del Abuelo', price: '4,00 €' },
+      { name: 'Tarta de Queso', price: '4,00 €' }
     ]
   }
 ];
